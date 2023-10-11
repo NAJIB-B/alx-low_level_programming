@@ -20,6 +20,6 @@ int main(void)
 		prev = current;
 		current = tmp + prev;
 	}
-	printf("%ld\n");
+	printf("%ld\n", even_sum);
 	return (0);
 }
