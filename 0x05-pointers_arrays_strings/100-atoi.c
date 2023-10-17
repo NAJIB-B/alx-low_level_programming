@@ -9,7 +9,6 @@
 int _atoi(char *s)
 {
 	int i, has_sign, no_sign, enc_num, result;
-	char sign;
 
 	has_sign = no_sign = enc_num = result = 0;
 	for (i = 0; s[i] != '\0'; ++i)
@@ -27,7 +26,6 @@ int _atoi(char *s)
 			else if (s[i] == '+' || s[i] == '-')
 			{
 				has_sign = 1;
-				sign = s[i];
 			}
 			if (s[i + 1] != '+' && s[i + 1] != '-' && (s[i + 1] < '0' && s[i + 1] > '9'))
 			{
