@@ -8,10 +8,10 @@
  */
 int _atoi(char *s)
 {
-	int i, has_sign, no_sign, enc_num;
+	int i, has_sign, no_sign, enc_num, result;
 	char sign;
 
-	has_sign = no_sign = enc_num = 0;
+	has_sign = no_sign = enc_num = result = 0;
 	for (i = 0; s[i] != '\0'; ++i)
 	{
 		if (s[i] < '0' && s[i] > '9')
@@ -29,7 +29,6 @@ int _atoi(char *s)
 				has_sign = 1;
 				sign = s[i];
 			}
-
 			if (s[i + 1] != '+' && s[i + 1] != '-' && (s[i + 1] < '0' && s[i + 1] > '9'))
 			{
 				no_sign = 1;
@@ -39,14 +38,17 @@ int _atoi(char *s)
 		else
 		{
 			enc_num = 1;
+			result = result * 10 + (s[i] - '0');
 			if (has_sign == 1)
 			{
-				putchar(sign);
+				result *= -1;
 				has_sign = 0;
 			}
 		}
 	}
 	if (enc_num != 1)
 		return (0);
+	else
+		return (result);
 
 }
