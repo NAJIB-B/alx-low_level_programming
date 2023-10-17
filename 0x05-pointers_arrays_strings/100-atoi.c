@@ -12,7 +12,6 @@ int _atoi(char *s)
 	char sign;
 
 	has_sign = no_sign = enc_num = 0;
-	sign = '';
 	for (i = 0; s[i] != '\0'; ++i)
 	{
 		if (s[i] < '0' && s[i] > '9')
@@ -40,7 +39,7 @@ int _atoi(char *s)
 		else
 		{
 			enc_num = 1;
-			if (has == 1)
+			if (has_sign == 1)
 			{
 				putchar(sign);
 				has_sign = 0;
