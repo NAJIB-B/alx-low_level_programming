@@ -18,7 +18,7 @@ int _atoi(char *s)
 		{
 			if (enc_num == 1)
 			{
-				return (1);
+				break;
 			}
 			else if (no_sign == 1)
 			{
@@ -46,10 +46,7 @@ int _atoi(char *s)
 			}
 		}
 	}
-
-	if (enc_num == 1)
-		return (1);
-	else
+	if (enc_num != 1)
 		return (0);
 
 }
