@@ -6,7 +6,7 @@
  *
  * Return: returns a pointer to dest
  */
-char *strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i, j, len;
 
@@ -17,7 +17,7 @@ char *strncat(char *dest, char *src, int n)
 	for (i = len; j < n && src[j] != '\0'; ++i)
 	{
 		dest[i] = src[j];
-		++j
+		++j;
 	}
 	if (j < n)
 		dest[i] = '\0';
