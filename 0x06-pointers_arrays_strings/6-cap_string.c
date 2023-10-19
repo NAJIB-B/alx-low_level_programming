@@ -13,7 +13,7 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; ++i)
 	{
-		if (s[i] < 96 && s[i] > 123)
+		if (s[i] > 96 && s[i] < 123)
 		{
 			if (last_c == ' ' ||
 					 last_c == '\t'   ||
