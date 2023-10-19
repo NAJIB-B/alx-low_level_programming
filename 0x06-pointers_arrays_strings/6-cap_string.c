@@ -22,8 +22,14 @@ char *cap_string(char *s)
 				break;
 			}
 		}
+		if (s[i] < 96 && s[i] > 123)
+		{
 		if (state == 0)
+		{
 			s[i] -= 32;
+			state = 1;
+		}
+		}
 	}
 	return (s);
 }
