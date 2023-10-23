@@ -11,6 +11,7 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int result, last_result;
 	int i, j;
 
+	result = 0;
 	for (i = 0; s[i] != '\0'; ++i)
 	{
 		last_result = result;
