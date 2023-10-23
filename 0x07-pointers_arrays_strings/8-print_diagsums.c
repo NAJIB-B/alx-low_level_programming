@@ -9,7 +9,7 @@
 void print_diagsums(char *a, int size)
 {
 	int i, ms, ss, m, s, r;
-	int *ptr;
+	char *ptr;
 
 	ptr = a;
 	s = size - 1;
