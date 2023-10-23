@@ -6,10 +6,10 @@
  * @size: size of matrix
  *
  */
-void print_diagsums(char *a, int size)
+void print_diagsums(int *a, int size)
 {
 	int i, ms, ss, m, s, r;
-	char *ptr;
+	int *ptr;
 
 	ptr = a;
 	s = size - 1;
