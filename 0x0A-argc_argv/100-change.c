@@ -28,14 +28,19 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; ; ++j)
 		{
-			if ((money / change[0]) == 0)
-				break;
-			money -= change[0];
-			result++;
-			if (money == 0)
+			if ((money / change[i]) == 0)
 			{
-				printf("%d", result);
-				return (0);
+				break;
+			}
+			else
+			{
+				money -= change[i];
+				result++;
+				if (money == 0)
+				{
+					printf("%d\n", result);
+					return (0);
+				}
 			}
 		}
 	}
