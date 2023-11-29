@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
  * argstostr - concatenates arguments to your program
  * @ac: number of arguments
