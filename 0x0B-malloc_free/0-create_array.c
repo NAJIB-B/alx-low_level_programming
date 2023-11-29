@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * create_array - creates an array of characters
  * @size: size of the array
