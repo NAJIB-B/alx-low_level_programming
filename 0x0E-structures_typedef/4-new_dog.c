@@ -12,7 +12,7 @@
  * Return: pointer to new dog or null if error occur
  */
 dog_t *new_dog(char *name, float age, char *owner)
-{ 
+{
 	dog_t *dog_ptr = malloc(sizeof(dog_t));
 
 	if (dog_ptr == NULL)
@@ -22,15 +22,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 
+	dog_ptr->name = strdup(name);
+	dog_ptr->owner = strdup(owner);
 	if (name == NULL || owner == NULL)
 	{
 		free(dog_ptr);
 		return (NULL);
-	}
-	else
-	{
-		dog_ptr->name = strdup(name); 
-		dog_ptr->owner = strdup(owner); 
 	}
 	dog_ptr->age = age;
 
