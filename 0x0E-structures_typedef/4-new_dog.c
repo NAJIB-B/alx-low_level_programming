@@ -1,4 +1,6 @@
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 #include "dog.h"
 
 /**
@@ -10,21 +12,27 @@
  * Return: pointer to new dog or null if error occur
  */
 dog_t *new_dog(char *name, float age, char *owner)
-{
-	dog_t dog;
-	dog_t *dog_ptr;
+{ 
+	dog_t *dog_ptr = malloc(sizeof(dog_t));
 
-	dog_ptr = &dog;
-	if (name == NULL)
+	if (dog_ptr == NULL)
+	{
+		free(dog_ptr);
 		return (NULL);
-	else
-		dog.name = name;
-	dog.age = age;
+	}
 
-	if (owner == NULL)
+
+	if (name == NULL || owner == NULL)
+	{
+		free(dog_ptr);
 		return (NULL);
+	}
 	else
-		dog.owner = owner;
+	{
+		dog_ptr->name = strdup(name); 
+		dog_ptr->owner = strdup(owner); 
+	}
+	dog_ptr->age = age;
 
 	return (dog_ptr);
 }
