@@ -1,4 +1,4 @@
-#include MAIN_H
+#include "main.h"
 
 /**
  * main - prints the name of the file
