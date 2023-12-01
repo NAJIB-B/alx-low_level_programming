@@ -6,7 +6,7 @@
  * Return: 0 for success and 1 otherwise
  */
 
-int main()
+int main(void)
 {
 	char *name = __FILE__;
 	int i;
