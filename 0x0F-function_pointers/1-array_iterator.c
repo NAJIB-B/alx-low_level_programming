@@ -1,7 +1,7 @@
 #include <stddef.h>
 
 /**
- * array_iterator - iterates over array and performs an action for all the 
+ * array_iterator - iterates over array and performs an action for all the
  * elements
  * @array: the array
  * @size: size of the array
@@ -18,4 +18,4 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	{
 		action(array[i]);
 	}
-}	
+}
