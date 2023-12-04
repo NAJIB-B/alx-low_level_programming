@@ -9,7 +9,7 @@
  */
 void print_all(const char *const format, ...)
 {
-	int i = 0, size = 0;
+	int i = 0, size = 0, j = 0;
 	char *string_value, *sep = "";
 
 	va_list args;
@@ -21,8 +21,7 @@ void print_all(const char *const format, ...)
 		++size;
 		++i;
 	}
-	i = 0;
-	while (i < size)
+	while (j < size)
 	{
 		switch (format[i])
 		{
@@ -42,10 +41,12 @@ void print_all(const char *const format, ...)
 			printf("%s%s", sep, string_value);
 			break;
 		default:
-			break;
+			++i;
+			continue;
 		}
 		sep = ", ";
 		++i;
 	}
 	printf("\n");
+	va_end(args);
 }
