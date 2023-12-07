@@ -12,19 +12,52 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 
+	list_t *new, *temp;
+
 	if (head == NULL)
 		return (NULL);
 
-	*head = malloc(sizeof(list_t));
+	new = malloc(sizeof(list_t));
+	new->len = _strlen(str);
+	new->str = strdup(str);
+	new->next = NULL;
 
-	(*head)->len = _strlen(str);
-	(*head)->str = strdup(str);
-	
-	if ((*head)->next != NULL)
-	(*head)->next = NULL;
 
+	if ((*head) == NULL)
+	{
+		(*head) = new;
+	}
+	else
+	{
+		temp = (*head);
+
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new;
+
+	}
 	return ((*head));
-
 
 }
 
+/**
+ * _strlen - returns length of string
+ * @str: string to check
+ *
+ * Return: length of string or 0 otherwise
+ */
+unsigned int _strlen(const char *str)
+{
+	int i, size = 0;
+
+	if (str == NULL)
+		return (0);
+
+	for (i = 0; str[i] != '\0'; ++i)
+	{
+		++size;
+	}
+	return (size);
+}
