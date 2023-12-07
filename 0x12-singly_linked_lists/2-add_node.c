@@ -11,17 +11,23 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
+
+	list_t *new, *temp;
+
 	if (head == NULL)
 		return (NULL);
 
-	list_t *new;
+	temp = (*head);
 
-	new =  malloc(sizeof(list_t));
+	new = malloc(sizeof(list_t));
+
 	new->len = _strlen(str);
 	new->str = strdup(str);
-	new->next = *head;
+	new->next = temp;
 
-	return (new);
+	(*head) = new;
+
+	return ((*head));
 
 
 }
@@ -32,7 +38,7 @@ list_t *add_node(list_t **head, const char *str)
  *
  * Return: length of string or 0 otherwise
  */
-unsigned int _strlen(char *str)
+unsigned int _strlen(const char *str)
 {
 	int i, size = 0;
 
