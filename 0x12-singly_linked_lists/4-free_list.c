@@ -11,7 +11,7 @@ void free_list(list_t *head)
 	list_t *last_node, *temp;
 
 	if (head == NULL)
-		return (NULL);
+		return;
 
 	last_node = head;
 
