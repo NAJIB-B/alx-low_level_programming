@@ -10,6 +10,9 @@ void free_list(list_t *head)
 {
 	list_t *last_node, *temp;
 
+	if (head == NULL)
+		return (NULL);
+
 	last_node = head;
 
 	while (last_node->next != NULL)
