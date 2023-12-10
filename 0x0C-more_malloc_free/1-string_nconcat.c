@@ -38,12 +38,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2_len = _strlen(s2);
 
-		if(n >= s2_len)
+		if (n >= s2_len)
 			size += s2_len;
 		else
 			size += n;
 	}
-	
+
 	ptr = malloc(size);
 	if (ptr == NULL)
 		return (NULL);
