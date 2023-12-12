@@ -42,11 +42,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (head == NULL)
 		return (-1);
 
-	length = listint_len((*head));
-	if (index > (length - 1))
+	if ((*head) == NULL)
 		return (-1);
 
-	if ((*head) == NULL)
+	length = listint_len((*head));
+	if (index > (length - 1))
 		return (-1);
 
 	next_node = (*head);
