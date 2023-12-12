@@ -5,6 +5,9 @@
  * add_nodeint_end - adds a node to the end of a list
  * @head: pointer to pointer of list
  * @n: number to add
+ *
+ * Return: returns pointer to the list
+ *
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
