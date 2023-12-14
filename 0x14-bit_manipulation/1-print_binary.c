@@ -9,6 +9,9 @@ void print_binary(unsigned long int n)
 {
 	int bit_position = 0, result = 0, i;
 
+	if (n < 0)
+		return;
+
 	if (n == 0)
 	{
 		_putchar('0');
