@@ -9,14 +9,14 @@
  */
 unsigned int pow_two(int n)
 {
-        unsigned int result = 1;
-        int i;
+	unsigned int result = 1;
+	int i;
 
-        for (i = 0; i < n; ++i)
-        {
-                result *= 2;
-        }
-        return (result);
+	for (i = 0; i < n; ++i)
+	{
+		result *= 2;
+	}
+	return (result);
 }
 
 
@@ -29,10 +29,10 @@ unsigned int pow_two(int n)
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-        if (index >= (sizeof(unsigned long int) * 8))
-                return (-1);
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-        *n &= ~pow_two(index);
-        return (1);
+	*n &= ~pow_two(index);
+	return (1);
 }
 
