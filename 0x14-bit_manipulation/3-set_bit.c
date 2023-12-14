@@ -9,14 +9,14 @@
  */
 unsigned int pow_two(int n)
 {
-        unsigned int result = 1;
-        int i;
+	unsigned int result = 1;
+	int i;
 
-        for (i = 0; i < n; ++i)
-        {
-                result *= 2;
-        }
-        return (result);
+	for (i = 0; i < n; ++i)
+	{
+		result *= 2;
+	}
+	return (result);
 }
 
 
