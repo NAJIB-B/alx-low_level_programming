@@ -7,8 +7,8 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bit_position = 0;
-	unsigned long int result = 0, i;
+	int bit_position = 0, i;
+	unsigned long int result = 0;
 
 	if (n == 0)
 	{
