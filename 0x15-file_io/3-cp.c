@@ -16,23 +16,23 @@ void catch_error(int code, char *msg, char *file_name)
 	if (file_name == NULL)
 	{
 		dprintf(STDERR_FILENO, "%s\n", msg);
-		exit (code);
+		exit(code);
 	}
 	else
 	{
-	
+
 		dprintf(STDERR_FILENO, "%s %s\n", msg, file_name);
-		exit (code);
+		exit(code);
 	}
 }
 
 /**
- * main - copies content of one file to another
+ * main - Entry point
  * @argc: number of arguments
  * @argv: array of arguments
  *
+ * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
 	ssize_t byte_written, byte_read;
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 	if (file_to == -1)
 		catch_error(99, "Error: Can't write to from top", argv[2]);
 
-	while ((byte_read = read(file_from, buffer, sizeof(buffer))) > 0)
+	while ((byte_read = read(file_from, buffer, sizeof(buffer))) >= 0)
 	{
 		if (byte_read == -1)
 			catch_error(98, "Error: Can't read from file", argv[1]);
@@ -60,21 +60,19 @@ int main(int argc, char *argv[])
 		if (byte_written == -1)
 			catch_error(99, "Error: Can't write to from bottom", argv[2]);
 
+		if (byte_read == 0)
+			break;
 	}
-
-
 	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_from);
-		exit (100);
+		exit(100);
 	}
 
 	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to);
-		exit (100);
+		exit(100);
 	}
-
 	return (0);
 }
-
