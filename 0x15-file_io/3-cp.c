@@ -53,12 +53,20 @@ int main(int argc, char *argv[])
 	while ((byte_read = read(file_from, buffer, sizeof(buffer))) >= 0)
 	{
 		if (byte_read == -1)
+		{
 			catch_error(98, "Error: Can't read from file", argv[1]);
+			close(file_from);
+			close(file_to);
+		}
 
 		byte_written = write(file_to, buffer, byte_read);
 
 		if (byte_written == -1)
+		{
 			catch_error(99, "Error: Can't write to", argv[2]);
+			close(file_from);
+			close(file_to);
+		}
 
 		if (byte_read == 0)
 			break;
