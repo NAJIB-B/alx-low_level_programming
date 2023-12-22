@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
-		catch_error(99, "Error: Can't write to from top", argv[2]);
+		catch_error(99, "Error: Can't write to", argv[2]);
 
 	while ((byte_read = read(file_from, buffer, sizeof(buffer))) >= 0)
 	{
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 		byte_written = write(file_to, buffer, byte_read);
 
 		if (byte_written == -1)
-			catch_error(99, "Error: Can't write to from bottom", argv[2]);
+			catch_error(99, "Error: Can't write to", argv[2]);
 
 		if (byte_read == 0)
 			break;

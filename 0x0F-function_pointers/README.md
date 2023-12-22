@@ -1,1 +1,1 @@
-readme for function pointer
+readme for variadic functions
