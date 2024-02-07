@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * dlistint_t - get the size of a list
+ * dlistint_len - get the size of a list
  * @h: the list to check the size of
  *
  * Return: returns the size of the list
