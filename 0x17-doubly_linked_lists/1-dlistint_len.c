@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "lists.h"
 
 /**
  * dlistint_t - get the size of a list
@@ -20,6 +21,7 @@ size_t dlistint_len(const dlistint_t *h)
 	while (temp != NULL)
 	{
 		++size;
+		temp = temp->next;
 	}
 
 	return (size);
